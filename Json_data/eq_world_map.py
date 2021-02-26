@@ -4,7 +4,7 @@ from plotly.graph_objs import Scattergeo, Layout
 from plotly import offline  # render the map
 
 # Explore the structure of the data
-filename = 'data/eq_data_1_day_m1.json'
+filename = 'data/eq_data_30_day_m1.json'
 with open(filename) as f:
     all_eq_data = json.load(f)
 
@@ -33,6 +33,10 @@ data = [{
     'lat': lats,
     'marker': {
         'size': [5*mag for mag in mags],    # marker size
+        'color': mags,                      # mags list to determine the color
+        'colorscale': 'Viridis',            # color range from dark blue to bright yellow
+        'reversescale': True,               # bright yellow: lowest value; dark blue: most severe earthquakes
+        'colorbar': {'title': 'Magnitude'}, # colorscale of colorbar
     },
 }]
 
