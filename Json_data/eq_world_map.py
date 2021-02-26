@@ -26,11 +26,15 @@ for eq_dict in all_eq_dicts:
 # print(lats[:5])     # first 5 latitudes: [33.4863333, 64.6673, -12.1025, 54.2232, 35.3098333]
 
 # Map the earthquakes
+# list of data; Scattergeo allow overlay a scatter plot of geographic data
 data = [{
     'type': 'scattergeo',
     'lon': lons,
     'lat': lats,
-}]     # list of data; Scattergeo allow overlay a scatter plot of geographic data
+    'marker': {
+        'size': [5*mag for mag in mags],    # marker size
+    },
+}]
 
 my_layout = Layout(title='Global Earthquakes')  # set chart title
 
