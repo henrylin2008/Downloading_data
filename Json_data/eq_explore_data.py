@@ -21,13 +21,6 @@ for eq_dict in all_eq_dicts:
     lons.append(lon)
     lats.append(lat)
 
-# print(mags[:10])    # first 10 magnitudes: [0.96, 1.2, 4.3, 3.6, 2.1, 4, 1.06, 2.3, 4.9, 1.8]
-# print(lons[:5])     # first 5 longitudes: [-116.7941667, -148.9865, -74.2343, -161.6801, -118.5316667]
-# print(lats[:5])     # first 5 latitudes: [33.4863333, 64.6673, -12.1025, 54.2232, 35.3098333]
-
-# Map the earthquakes
-data = [Scattergeo(lon=lons, lat=lats)]     # list of data; Scattergeo allow overlay a scatter plot of geographic data
-my_layout = Layout(title='Global Earthquakes')  # set chart title
-
-fig = {'data': data, 'layout': my_layout}
-offline.plot(fig, filename='global_earthquakes.html')   # display output on a html file
+print(mags[:10])    # first 10 magnitudes: [0.96, 1.2, 4.3, 3.6, 2.1, 4, 1.06, 2.3, 4.9, 1.8]
+print(lons[:5])     # first 5 longitudes: [-116.7941667, -148.9865, -74.2343, -161.6801, -118.5316667]
+print(lats[:5])     # first 5 latitudes: [33.4863333, 64.6673, -12.1025, 54.2232, 35.3098333]
